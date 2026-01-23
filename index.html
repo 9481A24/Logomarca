@@ -1,71 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topo com Logo</title>
-    <style>
-        /* CSS Básica para Resetar Espaços */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu com Logo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        /* Container do Cabeçalho (Topo) */
-        .header {
-            background-color: #333; /* Cor de fundo */
-            padding: 10px 5%; /* Espaçamento interno */
-            display: flex;
-            justify-content: space-between; /* Logo na esquerda, menu na direita */
-            align-items: center; /* Alinha verticalmente ao centro */
-            position: sticky; /* Mantém no topo ao rolar */
-            top: 0;
-            z-index: 1000;
-        }
+    .menu {
+      position: fixed; /* Fica fixo no topo */
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #111; /* Fundo escuro */
+      display: flex;
+      align-items: center; /* Centraliza verticalmente a logo */
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
 
-        /* Estilização da Logo */
-        .logo img {
-            height: 120px; /* Ajuste o tamanho da logo aqui */
-            width: auto;
-            display: block;
-        }
-
-        /* Estilização do Menu */
-        .nav-links {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 20px; /* Espaço entre os links */
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .nav-links a:hover {
-            color: #f4a261; /* Cor ao passar o mouse */
-        }
-    </style>
+    .menu img {
+      height: 50px; /* Ajusta a altura da logo */
+      object-fit: contain;
+    }
+  </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">
-            <!-- Substitua 'logo.png' pelo caminho da sua imagem -->
-            <img src="https://raw.githubusercontent.com/9481A24/Logomarca/main/96b62f39-207f-4085-9194-198f50ad4ad2-md.jpeg" alt="Logo da Empresa">
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-        </nav>
-    </header>
+  <nav class="menu">
+    <img src="sua-logo.png" alt="Logo da Empresa">
+  </nav>
+
+  <!-- Conteúdo de exemplo -->
+  <div style="margin-top:70px; padding:20px;">
+    <h1>Conteúdo da página</h1>
+    <p>Rola a página para ver o menu fixo com a logo.</p>
+    <p style="margin-bottom:1000px;">Mais conteúdo para rolagem...</p>
+  </div>
 
 </body>
 </html>
+
