@@ -1,64 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Lar em Dia Soluções</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topo com Logo</title>
+    <style>
+        /* CSS Básica para Resetar Espaços */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f2f2f2;
-    padding-top:120px;
-}
+        /* Container do Cabeçalho (Topo) */
+        .header {
+            background-color: #333; /* Cor de fundo */
+            padding: 10px 5%; /* Espaçamento interno */
+            display: flex;
+            justify-content: space-between; /* Logo na esquerda, menu na direita */
+            align-items: center; /* Alinha verticalmente ao centro */
+            position: sticky; /* Mantém no topo ao rolar */
+            top: 0;
+            z-index: 1000;
+        }
 
-/* TOPO FIXO */
-.topo{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    padding:15px 0;
-}
+        /* Estilização da Logo */
+        .logo img {
+            height: 150px; /* Ajuste o tamanho da logo aqui */
+            width: auto;
+            display: block;
+        }
 
-/* CARD DA LOGO */
-.card-logo{
-    background:#fff;
+        /* Estilização do Menu */
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px; /* Espaço entre os links */
+        }
 
-    /* 👇 ISSO DEIXA COLADO NA ESQUERDA */
-    margin-left:0;
-    margin-right:auto;
-
-    width:auto;
-    padding:16px 18px;
-    border-radius:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-
-    display:flex;
-    align-items:center;
-}
-
-/* IMAGEM DA LOGO */
-.card-logo img{
-    height:70px;
-    width:auto;
-    display:block;
-}
-</style>
-</head>
-
-<body>
-
-<!-- LOGO FIXO -->
-<div class="topo">
-    <div class="card-logo">
-        <img src="https://raw.githubusercontent.com/9481A24/Logomarca/main/fffe165f-091f-49c6-b3d3-8b9fa2c9b26b-md.jpeg" alt="Lar em Dia Soluções">
-    </div>
-</div>
-
-<div style="height:2000px;"></div>
-
-</body>
-</html>
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
