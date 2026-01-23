@@ -3,45 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu com Logo</title>
+  <title>Menu com Logo Dinâmica</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      height: 2000px; /* só para testar rolagem */
     }
 
+    /* Menu fixo */
     .menu {
-      position: fixed; /* Fica fixo no topo */
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #111; /* Fundo escuro */
+      height: 80px; /* altura fixa do menu */
+      background-color: #111; /* fundo escuro */
       display: flex;
-      align-items: center; /* Centraliza verticalmente a logo */
-      padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      align-items: center;
+      padding: 0 20px;
       z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
+    /* Logo */
     .menu img {
-      height: 50px; /* Ajusta a altura da logo */
-      object-fit: contain;
+      height: 80px; /* altura fixa */
+      width: auto;  /* largura automática */
+      transition: width 0.3s; /* animação suave */
     }
   </style>
 </head>
 <body>
 
   <nav class="menu">
-    <img src="https://raw.githubusercontent.com/9481A24/Logomarca/main/96b62f39-207f-4085-9194-198f50ad4ad2-md.jpeg" alt="Logo da Empresa">
+    <img id="logo" src="https://raw.githubusercontent.com/9481A24/Logomarca/main/96b62f39-207f-4085-9194-198f50ad4ad2-md.jpeg" alt="Logo">
   </nav>
 
-  <!-- Conteúdo de exemplo -->
-  <div style="margin-top:70px; padding:20px;">
-    <h1>Conteúdo da página</h1>
-    <p>Rola a página para ver o menu fixo com a logo.</p>
-    <p style="margin-bottom:1000px;">Mais conteúdo para rolagem...</p>
-  </div>
+  <script>
+    const logo = document.getElementById('logo');
+    const larguraMax = 400; // largura da logo no topo
+    const larguraMin = 150; // largura mínima ao rolar
+
+    // Inicializa logo com largura máxima
+    logo.style.width = larguraMax + "px";
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+
+      // Calcula nova largura proporcional à rolagem
+      let novaLargura = larguraMax - scrollY;
+
+      if(novaLargura < larguraMin) novaLargura = larguraMin;
+      if(novaLargura > larguraMax) novaLargura = larguraMax;
+
+      logo.style.width = novaLargura + "px";
+    });
+  </script>
 
 </body>
 </html>
-
