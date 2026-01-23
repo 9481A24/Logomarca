@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,35 +14,37 @@ body{
 }
 
 /* TOPO FIXO */
-.header-fixo{
+.topo{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     z-index:1000;
-    display:flex;
-    justify-content:center;
     padding:15px 0;
 }
 
-/* CARD DO LOGO */
-.logo-card{
+/* CARD DA LOGO */
+.card-logo{
     background:#fff;
-    width:95%;
-    max-width:1200px;
-    padding:16px 20px;
+
+    /* 👇 ISSO DEIXA COLADO NA ESQUERDA */
+    margin-left:0;
+    margin-right:auto;
+
+    width:auto;
+    padding:16px 18px;
     border-radius:16px;
     box-shadow:0 10px 30px rgba(0,0,0,0.15);
 
     display:flex;
     align-items:center;
-    justify-content:flex-start;
 }
 
 /* IMAGEM DA LOGO */
-.logo-card img{
-    height:60px;   /* controla o tamanho */
+.card-logo img{
+    height:70px;
     width:auto;
+    display:block;
 }
 </style>
 </head>
@@ -49,16 +52,13 @@ body{
 <body>
 
 <!-- LOGO FIXO -->
-<div class="header-fixo">
-    <div class="logo-card">
+<div class="topo">
+    <div class="card-logo">
         <img src="logo.png" alt="Lar em Dia Soluções">
     </div>
 </div>
 
-<!-- CONTEÚDO TESTE -->
-<div style="height:2000px; padding:20px;">
-    Role a página para ver o logo fixo.
-</div>
+<div style="height:2000px;"></div>
 
 </body>
 </html>
