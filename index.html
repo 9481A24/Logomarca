@@ -6,7 +6,6 @@
 <title>Lar em Dia Soluções</title>
 
 <style>
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;height:100%;font-family:Arial,sans-serif;}
 
@@ -20,7 +19,7 @@ body{
   text-shadow:2px 2px 5px #000;
 }
 
-/* NAV - borda fina */
+/* NAV - borda fina no topo */
 nav{
   position:fixed;
   top:0; left:0;
@@ -32,15 +31,16 @@ nav{
 
 /* MAIN */
 main{
-  padding-top:100px; /* espaço para logo descer */
+  padding-top:120px; /* aumenta para logo descer abaixo da borda */
   padding-bottom:20px;
   text-align:center;
 }
 
-/* LOGO CENTRAL */
+/* LOGO CENTRAL DESCENDO */
 .logo-centro{
   display:flex;
   justify-content:center;
+  margin-top:20px; /* descida da logo */
   margin-bottom:10px;
 }
 .logo-centro img{
@@ -52,7 +52,7 @@ main{
 /* FRASE PRÓXIMA DA LOGO */
 .frase-impacto{
   max-width:700px;
-  margin:-20px auto 30px auto; /* sobe frase próxima da logo */
+  margin:-15px auto 30px auto; /* sobe frase próxima da logo */
   font-size:1.6em;
   font-weight:bold;
   line-height:1.4em;
@@ -64,30 +64,38 @@ main{
   margin:20px auto;
   text-align:center;
 }
+.servicos h2{
+  font-size:2em;
+  margin-bottom:15px;
+}
 .servicos ul{
   list-style:none;
   padding:0;
 }
 .servicos li{
-  font-size:1.8em; /* maior letra */
-  padding:12px 0;  /* mais espaçamento */
+  font-size:1.8em; 
+  padding:12px 0; 
 }
 .servicos li::before{
   content:"✔️ ";
   margin-right:5px;
 }
 
-/* GALERIA DE FOTOS */
+/* GALERIA DE FOTOS 98% LARGURA */
 .galeria{
   display:flex;
-  justify-content:center;
+  flex-direction:column;
+  align-items:center;
   gap:20px;
   max-width:700px;
   margin:40px auto;
-  flex-wrap:wrap;
+}
+.galeria div, .galeria a{
+  position:relative;
+  width:98%;
 }
 .galeria img{
-  width:48%;
+  width:100%;
   border-radius:8px;
   cursor:pointer;
   transition: transform .3s;
@@ -95,10 +103,20 @@ main{
 .galeria img:hover{
   transform:scale(1.05);
 }
-.galeria a img{
-  width:100%;
-  border-radius:8px;
-  display:block;
+/* Botão sobre a primeira imagem */
+.ebook-btn{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#FF8C00;
+  color:white;
+  font-weight:bold;
+  padding:8px 12px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:0.9em;
+  box-shadow:0 3px 6px rgba(0,0,0,0.4);
 }
 
 /* COMENTÁRIOS */
@@ -139,38 +157,37 @@ main{
 .prev{left:10px;}
 .next{right:10px;}
 
-/* BOTÃO WHATSAPP FLOUTANTE */
+/* BOTÃO WHATSAPP FLOUTANTE COM TEXTO (PISCANDO 3 VEZES) */
 .whatsapp-btn{
   position:fixed;
-  bottom:30px;
+  bottom:200px; /* acima do mapa */
   right:20px;
-  width:70px;
-  height:70px;
   background:linear-gradient(135deg,#25D366,#128C7E);
-  border-radius:50%;
+  color:white;
+  font-weight:bold;
+  font-size:1em;
+  padding:15px 20px;
+  border-radius:30px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  z-index:9999;
+  text-decoration:none;
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:9999;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
-  animation: pulse 2s infinite;
-  transition: transform .2s;
+  animation: pulse3 1.5s ease-in-out 3;
 }
-.whatsapp-btn:hover{
-  transform:scale(1.1);
-}
-.whatsapp-btn img{width:40px;}
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
-  100%{transform:scale(1);}
+@keyframes pulse3{
+  0%,100%{transform:scale(1);}
+  25%{transform:scale(1.1);}
+  50%{transform:scale(1);}
+  75%{transform:scale(1.1);}
 }
 
 /* MAPA FINAL 100% EMBAIXO */
 #map-container{
   max-width:700px;
   height:180px;
-  margin:40px auto 10px;
+  margin:60px auto 10px;
   border-radius:10px;
   overflow:hidden;
 }
@@ -197,7 +214,7 @@ footer{
 
 <!-- LOGO CENTRAL -->
 <div class="logo-centro">
-  <img src="https://raw.githubusercontent.com/9481A24/Logomarca/main/65dec408-a827-4b5d-b9e8-501b35334734-md.jpeg" alt="Lar em dia solucoes">
+  <img src="https://raw.githubusercontent.com/9481A24/Logomarca/main/3e6b5b58-e2d5-479d-81ec-32fdbe16fb25-md.jpeg" alt="Lar em dia solucoes">
 </div>
 
 <!-- FRASE IMPACTO -->
@@ -210,6 +227,7 @@ Amostras no local e garantia de preço baixo
 
 <!-- LISTA SERVIÇOS CENTRAL -->
 <div class="servicos">
+  <h2>Serviços</h2>
   <ul>
     <li>Azulejista</li>
     <li>Bombeiro Hidráulico</li>
@@ -222,12 +240,22 @@ Amostras no local e garantia de preço baixo
   </ul>
 </div>
 
-<!-- GALERIA -->
+<!-- GALERIA 98% -->
 <div class="galeria">
-  <a href="https://www.instagram.com" target="_blank">
-    <img src="https://raw.githubusercontent.com/9481A24/Azulejistabetim/main/IMG-20250527-WA0020.jpg" alt="Ebook Instagram">
-  </a>
-  <img src="https://raw.githubusercontent.com/9481A24/Reyazulejista/main/images%20(16).jpeg" alt="Foto 2">
+  <!-- Imagem 1: Instagram + botão Ebook grátis -->
+  <div style="position:relative; margin-bottom:20px;">
+    <a href="https://www.instagram.com" target="_blank">
+      <img src="https://raw.githubusercontent.com/9481A24/Azulejistabetim/main/IMG-20250527-WA0020.jpg" alt="Ebook Instagram">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="ebook-btn">Ebook grátis</a>
+  </div>
+
+  <!-- Imagem 2: YouTube -->
+  <div style="margin-bottom:20px;">
+    <a href="https://www.youtube.com/c/SeuCanal" target="_blank">
+      <img src="https://raw.githubusercontent.com/9481A24/Reyazulejista/main/images%20(16).jpeg" alt="Canal YouTube">
+    </a>
+  </div>
 </div>
 
 <!-- COMENTÁRIOS CLIENTES -->
@@ -254,9 +282,9 @@ Davi Marco – Rua Brasília, 201 – Bairro Resplendor – Igarapé MG
 
 </main>
 
-<!-- WHATSAPP FLOUTANTE -->
+<!-- WHATSAPP FLOUTANTE COM TEXTO -->
 <a class="whatsapp-btn" href="https://wa.me/5531995439612" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+  Falar com profissional
 </a>
 
 <!-- RODAPÉ -->
