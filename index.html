@@ -32,8 +32,8 @@ nav{
 
 /* MAIN */
 main{
-  padding-top:60px; /* espaço abaixo da borda */
-  padding-bottom:60px;
+  padding-top:100px; /* espaço para logo descer */
+  padding-bottom:20px;
   text-align:center;
 }
 
@@ -52,13 +52,13 @@ main{
 /* FRASE PRÓXIMA DA LOGO */
 .frase-impacto{
   max-width:700px;
-  margin:-10px auto 30px auto;
+  margin:-20px auto 30px auto; /* sobe frase próxima da logo */
   font-size:1.6em;
   font-weight:bold;
   line-height:1.4em;
 }
 
-/* LISTA SERVIÇOS CENTRALIZADA */
+/* LISTA SERVIÇOS CENTRALIZADA MAIOR */
 .servicos{
   max-width:700px;
   margin:20px auto;
@@ -69,8 +69,8 @@ main{
   padding:0;
 }
 .servicos li{
-  font-size:1.4em;
-  padding:8px 0;
+  font-size:1.8em; /* maior letra */
+  padding:12px 0;  /* mais espaçamento */
 }
 .servicos li::before{
   content:"✔️ ";
@@ -139,29 +139,7 @@ main{
 .prev{left:10px;}
 .next{right:10px;}
 
-/* MAPA PEQUENO ABAIXO */
-#map-container{
-  max-width:700px;
-  height:180px;
-  margin:60px auto 10px; /* mais espaço acima */
-  border-radius:10px;
-  overflow:hidden;
-}
-
-/* MAPA ENDEREÇO */
-.map-endereco{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-/* RODAPÉ */
-footer{
-  background:rgba(0,0,0,.6);
-  padding:15px;
-  text-align:center;
-}
-
-/* WHATSAPP MODERNO CHAMATIVO */
+/* BOTÃO WHATSAPP FLOUTANTE */
 .whatsapp-btn{
   position:fixed;
   bottom:30px;
@@ -182,12 +160,32 @@ footer{
   transform:scale(1.1);
 }
 .whatsapp-btn img{width:40px;}
-
-/* PULSO ANIMAÇÃO */
 @keyframes pulse{
   0%{transform:scale(1);}
   50%{transform:scale(1.1);}
   100%{transform:scale(1);}
+}
+
+/* MAPA FINAL 100% EMBAIXO */
+#map-container{
+  max-width:700px;
+  height:180px;
+  margin:40px auto 10px;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+/* MAPA ENDEREÇO */
+.map-endereco{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* RODAPÉ */
+footer{
+  background:rgba(0,0,0,.6);
+  padding:15px;
+  text-align:center;
 }
 </style>
 </head>
@@ -237,11 +235,13 @@ Amostras no local e garantia de preço baixo
   <div class="comentario ativo">"Serviço excelente! Recomendo muito." – Cliente 1</div>
   <div class="comentario">"Profissional e rápido, adorei!" – Cliente 2</div>
   <div class="comentario">"Preço justo e qualidade garantida." – Cliente 3</div>
+  <div class="comentario">"Trabalho impecável e entrega rápida." – Cliente 4</div>
+  <div class="comentario">"Muito atencioso e eficiente!" – Cliente 5</div>
   <button class="slide-btn prev">&#10094;</button>
   <button class="slide-btn next">&#10095;</button>
 </div>
 
-<!-- MAPA ABAIXO -->
+<!-- MAPA FINAL 100% EMBAIXO -->
 <div id="map-container">
   <iframe
     src="https://www.google.com/maps?q=Rua%20Bras%C3%ADlia,%20201%20Resplendor%20Igarap%C3%A9%20MG&output=embed"
@@ -254,7 +254,7 @@ Davi Marco – Rua Brasília, 201 – Bairro Resplendor – Igarapé MG
 
 </main>
 
-<!-- WHATSAPP MODERNO -->
+<!-- WHATSAPP FLOUTANTE -->
 <a class="whatsapp-btn" href="https://wa.me/5531995439612" target="_blank">
   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
@@ -283,5 +283,3 @@ setInterval(()=>mostrar((i+1)%itens.length),5000);
 
 </body>
 </html>
-
-  
