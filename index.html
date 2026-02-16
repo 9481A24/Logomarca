@@ -96,6 +96,18 @@ nav{
   margin-bottom:15px;
 }
 
+/* FLEX FOTO ABAIXO DO CARD */
+.fotos-card{
+  display:flex;
+  justify-content:center;
+  margin-top:15px;
+}
+.fotos-card img{
+  width:90%;        /* ocupa quase toda largura do card */
+  max-width:350px;  /* limita tamanho máximo */
+  border-radius:20px; /* pontas arredondadas */
+}
+
 /* DIFERENCIAL */
 .diferencial{
   padding:40px 20px;
@@ -200,6 +212,7 @@ footer{
   .carousel-container{ max-width:90%; }
   .carousel-video{ height:160px; }
   .logo-centro img{ width:90%; }
+  .fotos-card img{ width:80%; } /* foto responsiva em celular */
 }
 </style>
 </head>
@@ -230,6 +243,11 @@ footer{
     <div class="preco">R$600/mês</div>
     <p>✔️ 1x por semana</p>
     <p>✔️ Limpeza completa</p>
+
+    <!-- FOTO ABAIXO DO CARD -->
+    <div class="fotos-card">
+      <img src="https://raw.githubusercontent.com/9481A24/Sos-limpeza/main/7578523b-e66e-4099-959e-2a949cb3a7d6-wm.png" alt="Plano Essencial">
+    </div>
   </div>
 
   <div class="plano">
@@ -237,16 +255,25 @@ footer{
     <div class="preco">R$1.000/mês</div>
     <p>✔️ 2x por semana</p>
     <p>✔️ Organização detalhada</p>
-  </div>
 
+    <!-- FOTO ABAIXO DO CARD -->
+    <div class="fotos-card">
+      <img src="https://raw.githubusercontent.com/9481A24/Sos-limpeza/main/7578523b-e66e-4099-959e-2a949cb3a7d6-wm.png" alt="Plano Premium">
+    </div>
+  </div>
 
   <div class="plano">
     <h2>lavagem estofados</h2>
     <div class="preco">R$1.000/mês</div>
     <p>✔️ 2x por semana</p>
     <p>✔️ Organização detalhada</p>
+
+    <!-- FOTO ABAIXO DO CARD -->
+    <div class="fotos-card">
+      <img src="https://raw.githubusercontent.com/9481A24/Sos-limpeza/main/7578523b-e66e-4099-959e-2a949cb3a7d6-wm.png" alt="Lavagem Estofados">
+    </div>
   </div>
-  
+
   <div class="plano">
     <h2>Limpeza por Hora</h2>
     <div class="preco">R$39,90/hora</div>
@@ -255,6 +282,11 @@ footer{
     <p>✔️ Material incluso</p>
     <p>✔️ Profissional treinada</p>
     <p>✔️ Tempo mínimo: 3 horas</p>
+
+    <!-- FOTO ABAIXO DO CARD -->
+    <div class="fotos-card">
+      <img src="https://raw.githubusercontent.com/9481A24/Sos-limpeza/main/7578523b-e66e-4099-959e-2a949cb3a7d6-wm.png" alt="Limpeza por Hora">
+    </div>
   </div>
 </div>
 
@@ -335,3 +367,5 @@ setInterval(nextSlide, 3000);
 
 </body>
 </html>
+
+  
